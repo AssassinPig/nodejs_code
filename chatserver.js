@@ -41,6 +41,10 @@ server.on('connection', function(c){
     removeClients(this);
   });
 
+  c.on('close', function() {
+    console.log('server close');
+  });
+
   c.on('error', function(e){
     console.log('error occurs');
     console.log(e.code);
